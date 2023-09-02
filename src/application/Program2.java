@@ -10,7 +10,7 @@ public class Program2 {
 
 	public static void main(String[] args) {
 
-		// atualização no banco de dado
+		//inserir nova dado no banco 
 
 		Connection conn2 = null;
 		PreparedStatement st2 = null;
