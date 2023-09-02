@@ -10,29 +10,29 @@ import db.DB;
 public class Program {
 
 	public static void main(String[] args) {
-		
+
+		// consulta no banco de dado
 
 		Connection conn = null;
 		Statement st = null;
 		ResultSet rs = null;
 		try {
 			conn = DB.getConnection();
-	
-			st = conn.createStatement();
-			
-			rs = st.executeQuery("select * from department");
-			
-			while (rs.next()) {
+
+			st = conn.createStatement();// executar consultas SQL no banco de dados.
+
+			rs = st.executeQuery("select * from department");// aqui manda um comando para o SQl
+
+			while (rs.next()) { // next percorre a tabela e retorna falo na ultima linha
 				System.out.println(rs.getInt("Id") + ", " + rs.getString("Name"));
 			}
-		}
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}
-		finally {
+		} finally {
 			DB.closeResultSet(rs);
 			DB.closeStatement(st);
 			DB.closeConnection();
 		}
+
 	}
 }
