@@ -11,6 +11,8 @@ public class Program4 {
 
 	public static void main(String[] args) {
 	 
+		//deletar dados do banco pelo id 
+		
 		Connection conn = null;
 		PreparedStatement st = null;
 		try {
