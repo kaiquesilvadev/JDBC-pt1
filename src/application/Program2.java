@@ -19,7 +19,9 @@ public class Program2 {
 			conn2 = DB.getConnection();
 
 			st2 = conn2.prepareStatement( //permite a criação de instruções SQL parametrizadas. 
-					"UPDATE seller " + "SET BaseSalary = BaseSalary + ? " + "WHERE " + "(DepartmentId = ?)"); // ?definir valores para esses placeholders de forma segura
+					"UPDATE seller " + "SET BaseSalary = BaseSalary + ? " 
+					+ "WHERE " 
+					+ "(DepartmentId = ?)"); // ?definir valores para esses placeholders de forma segura
 
 			st2.setDouble(1, 200.0);
 			st2.setInt(2, 2);
